@@ -10,6 +10,7 @@ class Player
   char button2;
   int index;
   color colour;
+  PImage sprite;
     
   Player()
   {
@@ -28,6 +29,7 @@ class Player
     this.start = start;
     this.button1 = button1;
     this.button2 = button2;
+    this.sprite = loadImage("Angel.png");
   }
   
   Player(int index, color colour, XML xml)
@@ -80,6 +82,7 @@ class Player
   {    
     stroke(colour);
     fill(colour);    
-    rect(pos.x, pos.y, 20, 20);
+    /*rect(pos.x, pos.y, 20, 20);*/
+    image(sprite, pos.x, pos.y);
   }  
 }
