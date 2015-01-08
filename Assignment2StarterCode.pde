@@ -11,24 +11,43 @@
 ArrayList<Player> players = new ArrayList<Player>();
 boolean[] keys = new boolean[526];
 
+boolean playing;
+
+
 void setup()
 {
   size(500, 500);
   setUpPlayerControllers();
+  playing = false;
 }
 
 void draw()
 {
-  for(Player player:players)
+  if (playing == false)
   {
-    player.update();
-    player.display();
+    //splash screen function
+    splashScreen();
+    
+  }
+  else
+  {
+    for(Player player:players)
+    {
+      player.update();
+      player.display();
+    }
   }
 }
 
 void keyPressed()
 {
   keys[keyCode] = true;
+  
+  if (keyCode == ENTER)
+  {
+    playing = true;
+    clear();
+  }
 }
 
 void keyReleased()
@@ -82,4 +101,11 @@ void setUpPlayerControllers()
     p.pos.y = 300;
    players.add(p);         
   }
+}
+
+void splashScreen()
+{
+ textSize(32);
+ text("Press Enter to begin", 0, height/2);
+  
 }
