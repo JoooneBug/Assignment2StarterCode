@@ -105,7 +105,38 @@ void setUpPlayerControllers()
 
 void splashScreen()
 {
- textSize(32);
- text("Press Enter to begin", 0, height/2);
-  
+ PImage galaxy;
+ galaxy = loadImage("galaxy.JPG");
+ galaxy.resize(500,500);
+ background(galaxy);
+ 
+ PFont moon;
+ moon = loadFont("Moonshiner-Round-48.vlw");
+ textFont(moon);
+ textAlign(CENTER, BOTTOM);
+ text("Welcome to", 250 , 70);
+ 
+ PFont moon2;
+ moon2 = loadFont("Moonshiner-Round-24.vlw");
+ 
+ PFont pieces;
+ pieces = loadFont("PiecesNFI-48.vlw");
+ textFont(pieces);
+ textAlign(CENTER, CENTER);
+ text("Space Run", 250, 140);
+ 
+ textFont(moon2);
+ textAlign(CENTER, TOP);
+ text("Race into space and collect speed ups and slow downs as you go!", 250, 210);
+ 
+ textFont(moon);
+ textAlign(CENTER, TOP);
+ text("Press Enter to begin", 250, 280);
+ 
+ textFont(moon2);
+ textAlign(CENTER, TOP);
+ text("   Player 1 Controls                  Player 2 Controls",250,350);
+ text("        W - UP                              I - UP",250,400);
+ text("A - LEFT       D - RIGHT             J - LEFT         L - RIGHT",250,450);
+ 
 }
